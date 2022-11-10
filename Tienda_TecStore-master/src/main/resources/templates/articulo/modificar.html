@@ -10,15 +10,15 @@
     </head>
     <body>
         <div class="contenido">
-            <h2>Datos del Cliente</h2>
+            <h2>Categorias</h2>
 
-            <a th:href="@{/categoria/listado}">Regresar</a>
+            <a th:href="@{/articulo/listado}">Regresar</a>
             <hr/>
-            <form th:action="@{/categoria/guardar}"
+            <form th:action="@{/articulo/guardar}"
                   method="post"
-                  th:object="${categoria}">
+                  th:object="${articulo}">
 
-                <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
+                <input type="hidden" name="idArticulo" th:field="*{idArticulo}"/>
 
                 <fieldset>
                     <label for="apellidos">Detalle</label>
@@ -29,11 +29,25 @@
                 </fieldset>
 
                 <fieldset>
+                    <label for="apellidos">Precio</label>
+                    <input type="number" name="precio" 
+                           placeholder="$$$"
+                           size="25"
+                           th:field="*{precio}" ></input>
+                </fieldset>
+
+                <fieldset>
+                    <label for="apellidos">Existencias</label>
+                    <input type="number" name="Correo" 
+                           size="25"
+                           th:field="*{existencias}" ></input>
+                </fieldset>
+
+                <fieldset>
                     <label for="apellidos">Activo</label>
                     <input type="checkbox" name="Telefono" 
                            th:field="*{activo}" ></input>
                 </fieldset>
-                
                 <hr/>
 
                 <input type="submit" name="guardar" value="guardar"/>
