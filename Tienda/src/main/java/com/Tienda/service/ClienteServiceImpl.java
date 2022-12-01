@@ -21,7 +21,7 @@ public class ClienteServiceImpl implements ClienteService {
     
     @Autowired
     private CreditoDao creditoDao;
-
+    
     @Override
     @Transactional(readOnly = true)
     public List<Cliente> getCliente() {
@@ -31,7 +31,7 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     @Transactional(readOnly = true)
     public Cliente getCliente(Cliente cliente) {
-
+        
         return clienteDao.findById(cliente.getIdCliente()).orElse(null);
 
     }
