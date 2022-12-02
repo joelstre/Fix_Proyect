@@ -25,7 +25,7 @@ private String Telefono;
 
 @JoinColumn(name="id_credito", referencedColumnName="id_credito")
 @ManyToOne
-private Credito credito;
+public Credito credito;
 
     public Cliente(Long idCliente, String Nombre, String Apellidos, String Correo, String Telefono, Credito credito) {
         this.idCliente = idCliente;
